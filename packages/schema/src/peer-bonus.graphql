@@ -1,0 +1,11 @@
+type PeerBonus {
+  id: ID!
+  message: String!
+  point: String!
+  fromUserAccount: UserAccount
+  toUserAccount: UserAccount
+}
+
+extend type Query {
+  peerBonusList: [PeerBonus!]!
+}

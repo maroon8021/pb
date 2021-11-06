@@ -1,0 +1,24 @@
+# https://github.com/tjmehta/graphql-date
+# https://www.apollographql.com/docs/graphql-tools/scalars/
+scalar Date
+
+type Query {
+  node(id: ID!): Node
+}
+type Mutation {
+  noop(input: NoopInput): NoopPayload
+}
+interface Node {
+  id: ID!
+}
+input NoopInput {
+  clientMutationId: String
+}
+type NoopPayload {
+  clientMutationId: String
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}

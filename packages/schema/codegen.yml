@@ -1,0 +1,29 @@
+overwrite: true
+generates:
+  dist/schema.graphql:
+    schema:
+      - src/**/*.graphql
+    plugins:
+      - "schema-ast"
+    config:
+      includeDirectives: true
+  dist/index.d.ts:
+    schema:
+      - src/**/*.graphql
+    plugins:
+      - "typescript"
+      - "typescript-resolvers"
+
+    config:
+      # mappers:
+      #   Aps: "../../backend/src/models/aps#Aps"
+      #   Prescription: "../../backend/src/models/prescription#Prescription"
+      #   PrescriptionsField: "../../backend/src/models/prescription#Prescription"
+      #   prescriptionsWithKeyword: "../../backend/src/models/prescription#Prescription"
+      #   PrescriptionCureAppPdtCode: "../../backend/src/models/prescription-cure-app-pdt-code#PrescriptionCureAppPdtCode"
+      #   MedicalInstitution: "../../backend/src/models/medical-institution#MedicalInstitution"
+      #   MedicalInstitutionMember: "../../backend/src/models/medical-institution-member#MedicalInstitutionMember"
+      #   Pdt: "../../backend/src/models/pdt#Pdt"
+      #   Notification: "../../backend/src/models/notification#UserNotification"
+      typesPrefix: GQL
+      noSchemaStitching: true

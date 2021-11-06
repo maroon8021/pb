@@ -1,0 +1,21 @@
+type UserAccount {
+  id: ID!
+  displayName: String!
+  userName: String!
+  email: String!
+  organization: Organization!
+}
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+extend type Query {
+  userAccount: UserAccount!
+  otherUsersInOrganization: [UserAccount!]!
+}
+
+extend type Mutation {
+  login(input: LoginInput!): UserAccount!
+}
